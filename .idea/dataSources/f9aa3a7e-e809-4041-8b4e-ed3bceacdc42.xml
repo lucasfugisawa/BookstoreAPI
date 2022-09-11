@@ -4,13 +4,13 @@
     <root id="1">
       <ServerVersion>5.0.12</ServerVersion>
     </root>
-    <schema id="2" parent="1" name="bookstore">
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="bookstore">
       <Current>1</Current>
     </schema>
-    <schema id="3" parent="1" name="admin"/>
     <schema id="4" parent="1" name="local"/>
-    <table id="5" parent="2" name="authors"/>
-    <table id="6" parent="2" name="books"/>
+    <table id="5" parent="3" name="authors"/>
+    <table id="6" parent="3" name="books"/>
     <table id="7" parent="4" name="clustermanager"/>
     <table id="8" parent="4" name="oplog.rs"/>
     <table id="9" parent="4" name="replset.election"/>
