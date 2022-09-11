@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import access from '../../private/access.js';
+import integrations from '../../integrations.json' assert {type: 'json'};
 
-const uri = `mongodb+srv://${access.mongoUsername}:${access.mongoPassword}@${access.mongoHostname}/${access.mongoDatabase}`;
+const uri = `mongodb+srv://${integrations.mongo.username}:${integrations.mongo.password}@${integrations.mongo.hostname}/${integrations.mongo.database}`;
 
 mongoose.connect(uri);
 let db = mongoose.connection;
