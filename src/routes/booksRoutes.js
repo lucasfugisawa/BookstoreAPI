@@ -4,12 +4,24 @@ import Validator from '../middlewares/Validator.js';
 
 const router = express.Router();
 
-router
-    .get('/books', booksController.getAllBooks)
-    .get('/books/search', booksController.getBooksByPublisher)
-    .get('/books/:id', booksController.getBookById)
-    .post('/books', Validator('Book'), booksController.createBook)
-    .put('/books/:id', Validator('Book'), booksController.updateBook)
-    .delete('/books/:id', booksController.deleteBook);
+/**
+ * @openapi
+ * /books:
+ *   get:
+ *     description: Lists all Books.
+ *     responses:
+ *       200:
+ *         description: An array containing all Books found.
+ *       500:
+ *         description: In case of any internal server error.
+ */
+router.get('/books', booksController.getAllBooks);
+
+
+router.get('/books/search', booksController.getBooksByPublisher);
+router.get('/books/:id', booksController.getBookById);
+router.post('/books', Validator('Book'), booksController.createBook);
+router.put('/books/:id', Validator('Book'), booksController.updateBook);
+router.delete('/books/:id', booksController.deleteBook);
 
 export default router;
