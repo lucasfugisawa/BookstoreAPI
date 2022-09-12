@@ -1,14 +1,16 @@
 import swaggerJsdoc from 'swagger-jsdoc';
+import config from './config.json' assert {type: 'json'};
 import fs from 'fs';
 
 const PATH = './doc.json';
+const API_VERSION = config.API_VERSION ?? '?.?.?';
 
 const options = {
     definition: {
         openapi: '3.0.0',
         info: {
             title: 'Bookstore API',
-            version: '1.0.0',
+            version: API_VERSION,
         },
     },
     apis: ['./src/routes/*Routes.js'], // files containing annotations as above

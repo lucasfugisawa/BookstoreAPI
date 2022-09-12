@@ -25,7 +25,7 @@ class BooksController {
                 res.status(200).send(result);
             }
             else {
-                let error = new createHttpError.BadRequest(`Book ${id} not found.`);
+                let error = new createHttpError.NotFound(`Book ${id} not found.`);
                 return next(error);
             }
         })
