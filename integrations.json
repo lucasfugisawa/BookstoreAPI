@@ -1,0 +1,8 @@
+{
+  "mongo": {
+    "username": "YourMongoAtlasUsername",
+    "password": "YourMongoAtlasPassword",
+    "hostname": "YourMongoAtlasHostname",
+    "database": "YourMongoAtlasDatabase"
+  }
+}

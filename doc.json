@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Bookstore API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/books": {
+      "get": {
+        "description": "Lists all Books.",
+        "responses": {
+          "200": {
+            "description": "An array containing all Books found."
+          },
+          "500": {
+            "description": "In case of any internal server error."
+          }
+        }
+      }
+    },
+    "/books/:id": {
+      "get": {
+        "description": "Returns information of a specific Book, given its id.",
+        "responses": {
+          "200": {
+            "description": "An object containing the Book information."
+          },
+          "404": {
+            "description": "Book not found for given id."
+          },
+          "500": {
+            "description": "In case of any internal server error."
+          }
+        }
+      },
+      "put": {
+        "description": "Updates an existing Book (given its id) using information in request body.",
+        "responses": {
+          "200": {
+            "description": "Book successfully updated. The Book information is returned."
+          },
+          "500": {
+            "description": "In case of any internal server error."
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a Book (given its id).",
+        "responses": {
+          "200": {
+            "description": "Book successfully deleted."
+          },
+          "500": {
+            "description": "In case of any internal server error."
+          }
+        }
+      }
+    },
+    "/books/": {
+      "post": {
+        "description": "Creates a new Book using information in request body.",
+        "responses": {
+          "201": {
+            "description": "New Book successfully created. The Book information is returned, including its id."
+          },
+          "500": {
+            "description": "In case of any internal server error."
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
