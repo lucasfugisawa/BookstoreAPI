@@ -1,5 +1,5 @@
 import app from './src/app.js';
-import config from './config.json' assert {type: 'json'};
+import config from './config.js';
 
 const HTTP_PORT = config.HTTP_PORT ?? 3000;
 

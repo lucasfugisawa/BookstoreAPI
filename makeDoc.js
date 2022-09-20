@@ -1,5 +1,5 @@
 import swaggerJsdoc from 'swagger-jsdoc';
-import config from './config.json' assert {type: 'json'};
+import config from './config.js';
 import fs from 'fs';
 
 const PATH = './doc.json';
